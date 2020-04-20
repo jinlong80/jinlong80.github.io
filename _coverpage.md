@@ -1,11 +1,12 @@
 
-# docsify <small>4.11.3</small>
+# J-Notes
 
-> A magical documentation site generator.
+> Just Notes of my development
 
-- Simple and lightweight (~21kB gzipped)
-- No statically built html files
-- Multiple themes
+- Mobile
+- Backend
+- Fronted
+- Firmware
+- MAC OS
 
-[GitHub](https://github.com/jinlong80/)
-[Getting Started](#NoteHuz)
+[Let's Go](#J-Notes)
