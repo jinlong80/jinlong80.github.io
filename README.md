@@ -1,4 +1,4 @@
-## J-Notes
+## j-notes
 
 > Just Notes of my development.
 
