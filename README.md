@@ -10,7 +10,6 @@
 
 ## Donate
 
-
 ## Community
 
 Users and the development team are usually in the [Gitter chat room](https://gitter.im/J-Notes/Lobby).
