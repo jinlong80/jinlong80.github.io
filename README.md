@@ -1,15 +1,8 @@
-## j-notes
+## J-Notes
 
-> Just Notes of my development.
+> Just a note during my development.
 
 ## What it is
+This is not a tutorial site, and not providing detail information, but if you need more information just contact me.
 
-## Features
-
-## Examples
-
-## Donate
-
-## Community
-
-Users and the development team are usually in the [Gitter chat room](https://gitter.im/J-Notes/Lobby).
+>Email jinlong80@gmail.com or [Gitter chat room](https://gitter.im/J-Notes/Lobby).

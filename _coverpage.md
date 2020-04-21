@@ -9,4 +9,4 @@
 - Firmware
 - MAC OS
 
-[Let's Go](#j-notes)
+[Let's Go](#J-Notes)

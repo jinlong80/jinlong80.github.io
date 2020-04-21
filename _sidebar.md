@@ -1,5 +1,3 @@
-- Android
-
 - Backend
 
   - [Docker](docker.md)
@@ -18,23 +16,6 @@
   - [SSH](ssh.md)
   - [UFW](ufw.md)
 
-- Frontend
-
-- Hackintosh
-
-- Firmware
-
-- iOS
-  - [Xcode](xcode.md)
-- MACOS
-
 - Tools
-  - Terminal
   - [Visual Studio Code](visual_studio_code.md)
-  - [Webstorm](webstorm.md)
-  - Platform IO
 
-- Others
-  - TLS
-  - SSH
-  - Tasmota
