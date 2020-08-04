@@ -87,3 +87,7 @@ passwrod: public
 [EMQX Setup With Server/Client Certification](https://abawchen.gitlab.io/chore/2019/06/17/emqx-tls-setup.html)
 
 [Using Lets Encrypt Certificates in EMQ](https://medium.com/@emqtt/using-lets-encrypt-certificates-in-emq-b11e0e57efa6)
+
+[EMQX Shared Group Topic](https://docs.emqx.io/tutorial/latest/en/advanced/share_subscribe.html)
+
+[EMQX Shared Group Topic Tutorial](https://juejin.im/post/5dca4d4751882573db10552f)

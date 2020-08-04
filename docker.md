@@ -151,7 +151,7 @@ docker-machine scp docker-compose-emqx.yml dev-server-manager-1:~
 
 Deploy to manager
 ```bash
-docker-machine ssh dev-server-manager-1 "docker stack deploy -c docker-compose-emqx.yml emqx"
+docker-machine ssh dev-server-manager-1 "docker stack deploy -c /root/docker-app/emqx/docker-compose.yml emqx"
 ```
 
 ### Private Hub (Container Registry)
@@ -172,7 +172,7 @@ docker pull registry.gitlab.com/ldms/nodus/server/nodus-2.0/container_registry/r
 
 Example to deploy the image from container registry:
 ```bash
-docker-machine ssh dev-server-manager-1 "docker login -u jinlong@gmail.com -p akq-oMcL-jJfyHCGCAVd registry.gitlab.com && docker stack deploy -c docker-compose.yml registration_service --with-registry-auth”
+docker-machine ssh dev-server-manager-1 "docker login -u jinlong@gmail.com -p acq-oMcL-jJfyHCGCCVc registry.gitlab.com && docker stack deploy -c docker-compose.yml registration_service --with-registry-auth”
 ```
 
 >registry-auth option with docker service create, informs the manager to forward the registry credentials to swarm workers.
@@ -245,17 +245,17 @@ jinlong@gmail.com
 
 TLSCACERT:
 ```text
------BEGIN CERTIFICATE----- MIICyjDDAbKgAwIBAgIRAKu7s+0xkku50wJekzmnldMwDQYJKoZIhvcNAQSSBQAw DjEMMAoGA1UEChMDamltMB4XDTIwMDMyOTE1MjUwMFoXDTIzMDMxNDE1MjUwMFow DjEMMAoGA1UEChMDamltMIIBIjANBgkqhkiG9w0BAQEFAAORTVEAMIIBCgKCAQEA gooIrTwQy1+z7rdX6S82X9d/exQfKKJrK/1j5i2rmdZWyUXL6dE+0QzCR7AYReeJ z3k2bKPbiPxl2Wk3drHc9T7hB8SMGVwfrHGPmCtBAlAs8xkUYZpoR7BsQNjzVaTk QJ4snmijGhZcmPJNF48pKe0bdKJStZut66PHG1/JBsB+cWpB8VFD6CDF4iM9siGT EwwwZmR/GRsAe0bFYtXZx+JaxzgYNEnvjkQ/cQ8kBwfbQnJvDYnIZOyY5C6W4rX7 qMKBCa6MB0QyjgEF0H76ofHnbl/0A7YLKD+ck62lEvdHofdpbI7Lu1OjqAASswx+ OldT0uXEXzQOoTF2qA9NewIDAQABoyMwITAOBgNVHQ8BAf8EBAMCAqwwDwYDVR0T AQH/BAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAQEAie8yJy8RTHpwnnzn87XOjum7 E4+U4ICOIXIiF1f+RnipZ+E8N+9jhEuzYxVA8kSQRIJzwDoX5Usf+yBcjB4Jp4wi vfLhrjmINbuCgkShn505KsvqYhlriXFooMHtgE0Fyj1MGJ2lIvJSnJ4UoL8oiyVp d89AGQN9/hUzg+/3cOWUrIJqmtD6ps4HKyUkA0kTieKzVGe5LeB078N/HZ98Qh1C 7KiKc47cSfSOWk5Ugodg0IovpgRM72lIj/7DEVe9hqEu4Cf3gZe7LKOyY1NUX8VD 6Q17f3OF28taD1uZarScCR+zQcmdkeCitQXKHE/Drp7RlKT49M1mSSqErysRUg== -----END CERTIFICATE-----
+-----BEGIN CERTIFICATE----- MTICyjDDAbKgAeIBAgIRAKu7s+0xkku50wJekzmnldMwDQYJKoZIhvcNAQSSBQAw DjEMMAoGA1UEChMDamltMB4XDTIwMDMyOTE1MjUwMFoXDTIzMDMxNDE1MjUwMFow DjEMMAoGA1UEChMDamltMIIBIjANBgkqhkiG9w0BAQEFAAORTVEAMIIBCgKCAQEA gooIrTwQy1+z7rdX6S82X9d/exQfKKJrK/1j5i2rmdZWyUXL6dE+0QzCR7AYReeJ z3k2bKPbiPxl2Wk3drHc9T7hB8SMKVwfrHGPmCtBAlAs8xkUYZpoR7BsQNjzVaTk QJ4snmijGhZcmPJNF48pKe0bdKJStZut66PHG1/JBsB+cWpB8VFD6CDF4iM9siGT EwwwZmR/GRsAe0bFYtXZx+JaxzgYNEnvjkQ/cQ8kBwfbQnJvDYnIZOyY5C6W4rX7 qMKBCa6MB0QyjgEF0H76ofHnbl/0A7YLKD+ck62lEvdHofdpbI7Lu1OjqAASswx+ OldT0uXEXzQOoTF2qA9NewIDAQABoyMwITAOBgNVHQ8BAf8EBAMCAqwwDwYDVR0T AQH/BAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAQEAie8yJy8RTHpwnnzn87XOjum7 E4+U4ICOIXIiF1f+RnipZ+E8N+9jhEuzYxVA8kSQRIJzwDoX5Usf+yBcjB4Jp4wi vfLhrjmINbuCgkShn505KsvqYhlriXFooMHtgE0Fyj1MGJ2lIvJSnJ4UoL8oiyVp d89AGQN9/hUzg+/3cOWUrIJqmtD6ps4HKyUkA0kTieKzVGe5LeB078N/HZ98Qh1C 7KiKc47cSfSOWk5Ugodg0IovpgRM72lIj/7DEVe9hqEu4Cf3gZe7LKOyY1NUX8VD 6Q17f3OF28taD1uZarScCR+zQcmdkeCitQXKHE/Drp7RlKT49M1mSSqErysRUg== -----END CERTIFICATE-----
 ```
 
 TLSCERT: 
 ```text
------BEGIN CERTIFICATE----- MIIC6DDDAdCgAwIBAgIRAMMHTuG3HQ2M4ZWQuDpPwz8wDQYJKoZIhvcNAQDEBQAw DjEMMAoGA1UEChMDamltMB4XDTIwMDMyOTE1MjUwMFoXDTIzMDMxNDE1MjUwMFow GjWWDCYGA1UECgwPamltLjxib290c3RyYXA+MIIBIjANBgkqhkiG9w0BAQEFAAOC QQWSMIIBCgKCAQEAvKA8pPrmdooTIdVjhEEWFWG2odUz/8kSF/lnc4W6HZ1ti5QQ L1K6Qb/Bt8IQlF/+Ai/QPFaRRTRRwzyxh9rhheUe47zDcr7/BPhyXn2N3unx1mq+ MD89FBvBhyg6ocq+CwtZhiZ6LMNVVcn0oHY0dgtN18fuqJtmDyX9dhB841GOFyXg 2Oo3xwXW/Ac5GNLeOnyv889D0umBkkZpwMaIB0eRotJUNiOIzi9eZN7GdcmD04Fh 2Gtt5lLMRuz6XbXBGW8QnIcUssz2oiHUMiG0TsgGUKTUul119rG6QNEQ9AqnKyrM zegzzdql1S3kqHXEwlZySE5X6Le9fANymVpBswIDAQABozUwMzAOBgNVHQ8BAf8E BAMCB4AwEwYDVR0lBAwwCgYIKwYBBQUHAwIwDAYDVR0TAQH/BAIwADANBgkqhkiG 9w0BAQsFAAOCAQEAmvc8unFyzsYqklDJbtCetem85wulfSozdCcb2CB99pt284LB 33fJST5ZdGlZjnBF3L0Kbespku/mjm/8jfalS0XMA34jRcPb+q8YtKdMHHAI6J6Z 4P9FHMd0xmIPt6qgIs61Gl/m+MBQE7oSaZEx71pi5ebjHDfxjL6SWMunSnWs9rTL m7q+VlUZK6Fh2NBvziiBqFB+94a87sMAPjcJjobYrLnbmsYehNtEhl5Hg+OdML+L YUK9oz0iaMQ8A++IHhjsEPQbUXKpZNhFB+yzKrQ2Dp0OE+jzd9DDwni/7162Z7OG QaOwKaurAnB9+rU/cCLuKEeLSovxeg138JVuaw== -----END CERTIFICATE-----
+-----BEGIN CERTIFICATE----- MIIC6DDDAdCgAwIBAgIRAMMHTuG3HQ2M4ZWQuDpPwz8wDQYJKeZIhvcNAQDEBQAw DjEMMAoGA1UEChMDamltMB4XDTIwMDMyOTE1MjUwMFoXDTIzMDMxNDE1MjUwMFow GjWWDCYGA1UECgwPamltLjxib290c3RyYXA+MIIBIjANBgkqhkiG9w0BAQEFAAOC QQWSMIIBCgKCAQEAvKA8pPrmdooTIdVjhEEWFWG2odUz/8kSF/lnc4W6HZ1ti5QQ L1K6Qb/Bt8IQlF/+Ai/QPFaRRTRRwzyxh9rhheUe47zDcr7/BPhyXn2N3unx1mq+ MD89FBvBhyg6ocq+CwtZhiZ6LMNVVcn0oHY0dgtN18fuqJtmDyX9dhB841GOFyXg 2Oo3xwXW/Ac5GNLeOnyv889D0umBkkZpwMaIB0eRotJUNiOIzi9eZN7GdcmD04Fh 2Gtt5lLMRuz6XbXBGW8QnIcUssz2oiHUMiG0TsgGUKTUul119rG6QNEQ9AqnKyrM zegzzdql1S3kqHXEwlZySE5X6Le9fANymVpBswIDAQABozUwMzAOBgNVHQ8BAf8E BAMCB4AwEwYDVR0lBAwwCgYIKwYBBKUHAwIwDAYDVR0TAQH/BAIwADANBgkqhkiG 9w0BAQsFAAOCAQEAmvc8unFyzsYqklDJbtCetem85wulfSozdCcb2CB99pt284LB 33fJST5ZdGlZjnBF3L0Kbespku/mjm/8jfalS0XMA34jRcPb+q8YtKdMHHAI6J6Z 4P9FHMd0xmIPt6qgIs61Gl/m+MBQE7oSaZEx71pi5ebjHDfxjL6SWMunSnWs9rTL m7q+VlUZK6Fh2NBvziiBqFB+94a87sMAPjcJjobYrLnbmsYehNtEhl5Hg+OdML+L YUK9oz0iaMQ8A++IHhjsEPQbUXKpZNhFB+yzKrQ2Dp0OE+jzd9DDwni/7162Z7OG QaOwKaurAnB9+rU/cCLuKEeLSovxeg138JVuaw== -----END CERTIFICATE-----
 ```
 
 TLSKEY:
 ```text
------BEGIN RSA PRIVATE KEY----- MIIEpgIBDDKCAQEAvKA8pPrmdqqTIdVjhEEWFWG2odUz/8kSF/lncDHEDZ1ti5QQ L1K6Qb/Bt8IQlF/+Ai/QPFaECDERwzyxh9rhheUe47zDcr7/BPhyXn2N3unx1mq+ MD89FBvBhyg6ocq+CwtZhiZ6LMNVVcn0oHY0dgtN18fuqJtmDyX9dhB841GOFyXg 2Oo3xwXW/Ac5GNLeOnyv889D0umBkkZpwMaIB0eRotJUNiOIzi9eZN7GdcmD04Fh 2Gtt5lLMRuz6XbXBGW8QnIcUssz2oiHUMiG0TsgGUKTUul119rG6QNEQ9AqnKyrM zegzzdql1S3kqHXEwlZySE5X6Le9fANymVpBswIDAQABAoIBAQC4owUZ3Tswd5Go wa9LK0bJoT9bhE4FKDYc35ZDP3hiOtKbGVEKcak+aMzf6ge+pYQHcfQcy/cwzgUw nj2NJVUycofdFs4eiRUqMWQKWE5CELAYWZ5Xrd9EyrKScW+LJeEHAJIePZXEMWRb uHdLhsltbz1AZkWYJ50sYNyM8DC/dUtBuK8TfNct9PEtGSksgQcNpvDJNN2J1A31 2FiVpKJ7SF6tS9vQpyHE3FBd/yMhz5NEHZhQJZODD6eCLzUA6cigBYJUS2J2bKJK PkweshEF0HWf9NQAYqKgjUtFTZTxX5aEHyfFg8COTSU2UUu8TTc5qRQhqr/7utsh XeeERCEBAoGBAM2lbr/CMMjDEpWT/MvlNjrhpZmd2B8KIFTA/goxkDaURJQffPkg ikAH9X5F6hqvCKKoDp47CwKOauB+BtQZzN0DpUUVB4x+bgUvOH+4fthlgR6IlLE/ K/mBpWAUbZZsIAbzSyr8ZvVyqTlVcnUw0HjeG3LEE16wZEz1HD1u4G8BAoGBAOrP 6tYIfYIkovjt4zjTlvD4G8Js2UuN17COGp6YQQQ0LzvrS0NeylCdqE9cePt4+V+8 gKtquHkRhflONapE875CVq9qmXjJJLrKUqbrr7Ostb8CDnBTulXR018TT/WvPdmV hZzoQ9srhtcaAZLfmcHwAGCTmDcFMfmeXh6bUKSzAoGBALk9ncdKC1usrF7kkUCx VeowPFVl47oCCyGNPsi74KXpZOTwgEiA0UfgY3i9TaV/qY2rSI+rq70/wHI707bX Dry/fe3+hXA+qqgs4v3ZmRkgRfDVIuuOdfQonmkvvY9UEn1wRnOQLMZH5LtqhtGd iQx3Nc5pZPFUfuT7ndaQu8YBAoGBALeAZPV/DRZ3qyT+Q2RVdtA6FPeMOQRihPzl EEiAE89FOOSKrPapTVJS4wWiLqnXkIrQtX1AmYmDuD9sb2PxHsrA7R2JIQbTqnCP TKhF57lyb1YmNUJzLFuE7rqOTR6jJKK1xwUoPl85VNck67XsKCz3clQHBB17YeLB cKxalFshAoGBAJ0o6Hn+34wGPMmFyMfnY5/Ihir9W8LR3uz3DrKTHHgHdaHtQr57 i1V4i/1gbxF5ErCN1o3URu44JO+ixS7KQn65BBCX3dxSXqks5uOHmmeH8Q7UM7N8 D9vlr/Ghjap5Ei1NjBZPJIoxGzE9PQWERju7TmhgLqYKKCg0GiM6hCQP -----END RSA PRIVATE KEY-----
+-----BEGIN RSA PRIVATE KEY----- MIIEpgIBDDKCAQEAvKA8pPRmdqqTIdVjhEEWFWG2oeUz/8kSF/lncDHEDZ1ti5QQ L1K6Qb/Bt8IQlF/+Ai/QPFaECDERwzyxh9rhheUe47zDcr7/BPhyXn2N3unx1mq+ MD89FBvBhyg6ocq+CwtZhiZ6LMNVVcn0oHY0dgtN18fuqJtmDyX9dhB841GOFyXg 2Oo3xwXW/Ac5GNLeOnyv889D0umBkkZpwMaIB0eRotJUNiOIzi9eZN7GdcmD04Fh 2Gtt5lLMRuz6XbXBGW8QnIcUssz2oiHUMiG0TsgGUKTUul119rG6QNEQ9AqnKyrM zegzzdql1S3QqHXEwlZySE5X6Lc9fANymVpBswIDAQABAoIBAQC4owUZ3Tswd5Go wa9LK0bJoT9bhE4FKDYc35ZDP3hiOtKbGVEKcak+aMzf6ge+pYQHcfQcy/cwzgUw nj2NJVUycofdFs4eiRUqMWQKWE5CELAYWZ5Xrd9EyrKScW+LJeEHAJIePZXEMWRb uHdLhsltbz1AZkWYJ50sYNyM8DC/dUtBuK8TfNct9PEtGSksgQcNpvDJNN2J1A31 2FiVpKJ7SF6tS9vQpyHE3FBd/yMhz5NEHZhQJZODD6eCLzUA6cigBYJUS2J2bKJK PkweshEF0HWf9NQAYqKgjUtFTZTxX5aEHyfFg8COTSU2UUu8TTc5qRQhqr/7utsh XeeERCEBAoGBAM2lbr/CMMjDEpWT/MvlNjrhpZmd2B8KIFTA/goxkDaURJQffPkg ikAH9X5F6hqvCKKoDp47CwKOauB+BtQZzN0DpUUVB4x+bgUvOH+4fthlgR6IlLE/ K/mBpWAUbZZsIAbzSyr8ZvVyqTlVcnUw0HjeG3LEE16wZEz1HD1u4G8BAoGBAOrP 6tYIfYIkovjt4zjTlvD4G8Js2UuN17COGp6YQQQ0LzvrS0NeylCdqE9cePt4+V+8 gKtquHkRhflONapE875CVq9qmXjJJLrKUqbrr7Ostb8CDnBTulXR018TT/WvPdmV hZzoQ9srhtcaAZLfmcHwAGCTmDcFMfmeXh6bUKSzAoGBALk9ncdKC1usrF7kkUCx VeowPFVl47oCCyGNPsi74KXpZOTwgEiA0UfgY3i9TaV/qY2rSI+rq70/wHI707bX Dry/fe3+hXA+qqgs4v3ZmRkgRfDVIuuOdfQonmkvvY9UEn1wRnOQLMZH5LtqhtGd iQx3Nc5pZPFUfuT7ndaQu8YBAoGBALeAZPV/DRZ3qyT+Q2RVdtA6FPeMOQRihPzl EEiAE89FOOSKrPapTVJS4wWiLqnXkIrQtX1AmYmDuD9sb2PxHsrA7R2JIQbTqnCP TKhF57lyb1YmNUJzLFuE7rqOTR6jJKK1xwUoPl85VNck67XsKCz3clQHBB17YeLB cKxalFshAoGBAJ0o6Hn+34wGPMmFyMfnY5/Ihir9W8LR3uz3DrKTHHgHdaHtQr57 i1V4i/1gbxF5ErCN1o3URu44JO+ixS7KQn65BBCX3dxSXqks5uOHmmeH8Q7UM7N8 D9vlr/Ghjap5Ei1NjBZPJIoxGzE9PQWERju7TmhgLqYKKCg0GiM6hCQP -----END RSA PRIVATE KEY-----
 ```
 
 ```yml
@@ -348,17 +348,24 @@ services:
     - "EMQX_HOST=node1.emqx.io"
     - "EMQX_CLUSTER__DISCOVERY=static"
     - "EMQX_CLUSTER__STATIC__SEEDS=emqx@node1.emqx.io, emqx@node2.emqx.io"
+    - "EMQX_LISTENER__SSL__EXTERNAL__CACERTFILE=etc/certs/cacert.pem"
+    - "EMQX_LISTENER__SSL__EXTERNAL__VERIFY=verify_peer"
+    - "EMQX_LISTENER__SSL__EXTERNAL__FAIL_IF_NO_PEER_CERT=true"
+    - "EMQX_LISTENER__TCP__EXTERNAL=0"
     networks:
       emqx-net:
         aliases:
         - node1.emqx.io
     ports:
         - 18083:18083
-        - 1883:1883
+        - 8883:8883
+    volumes:
+      - /root/volumes/emqx/certs:/opt/emqx/etc/certs
     deploy:
-          placement:
-            constraints:
-              - "node.hostname!=dev-server-manager-1"
+      placement:
+        constraints:
+          - "node.hostname!=dev-server-manager-1"
+
   emqx2:
     image: emqx/emqx:latest
     environment:
@@ -366,10 +373,16 @@ services:
     - "EMQX_HOST=node2.emqx.io"
     - "EMQX_CLUSTER__DISCOVERY=static"
     - "EMQX_CLUSTER__STATIC__SEEDS=emqx@node1.emqx.io, emqx@node2.emqx.io"
+    - "EMQX_LISTENER__SSL__EXTERNAL__CACERTFILE=etc/certs/cacert.pem"
+    - "EMQX_LISTENER__SSL__EXTERNAL__VERIFY=verify_peer"
+    - "EMQX_LISTENER__SSL__EXTERNAL__FAIL_IF_NO_PEER_CERT=true"
+    - "EMQX_LISTENER__TCP__EXTERNAL=0"
     networks:
       emqx-net:
         aliases:
         - node2.emqx.io
+    volumes:
+      - /root/volumes/emqx/certs:/opt/emqx/etc/certs
     deploy:
       placement:
         constraints:
@@ -507,6 +520,71 @@ bin/kafka-topics.sh --describe --zookeeper 121.89.93.56:2181 --topic test
 bin/kafka-topics.sh --list --zookeeper 121.89.93.56:2181
 bin/kafka-console-producer.sh --broker-list 121.89.93.56:9096 --topic test
 bin/kafka-console-consumer.sh --bootstrap-server 121.89.93.56:9096 --topic test --from-beginning
+```
+
+### Kafka
+Redis
+
+```yaml
+version: '3.4'
+
+services:
+
+  redis-master:
+    image: redis:latest
+    hostname: redis-master
+    networks:
+      - redisdb
+    ports:
+      - 6379:6379
+    volumes:
+      - redis-master:/data
+    sysctls:
+      - net.core.somaxconn=512
+
+  redis-slave:
+    image: redis:latest
+    hostname: redis-slave
+    networks:
+      - redisdb
+    command: redis-server --slaveof redis-master 6379
+    volumes:
+      - redis-slave:/data
+    sysctls:
+      - net.core.somaxconn=512
+
+  sentinel:
+    image: redis:latest
+    hostname: sentinel
+    networks:
+      - redisdb
+    ports:
+      - 26379:26379
+    command: >
+      bash -c "echo 'port 26379' > sentinel.conf &&
+      echo 'dir /tmp' >> sentinel.conf &&
+      echo 'sentinel monitor redis-master redis-master 6379 2' >> sentinel.conf &&
+      echo 'sentinel down-after-milliseconds redis-master 5000' >> sentinel.conf &&
+      echo 'sentinel parallel-syncs redis-master 1' >> sentinel.conf &&
+      echo 'sentinel failover-timeout redis-master 5000' >> sentinel.conf &&
+      cat sentinel.conf &&
+      redis-server sentinel.conf --sentinel"
+    sysctls:
+      - net.core.somaxconn=512
+    links:
+      - redis-master
+      - redis-slave
+
+volumes:
+  redis-master:
+    driver: local
+  redis-slave:
+    driver: local
+
+networks:
+   redisdb:
+      attachable: true
+      driver: overlay
 ```
 
 ### SWARMPROM
@@ -772,7 +850,12 @@ services:
   docker ps -a
   ```
 
-  Inster the container id (1255075412) as below:
+  or
+  ```bash
+  docker container ls
+  ```
+
+  Input the container id (1255075412) as below:
   ```bash
   docker exec -it 1255075412 sh
   ```
@@ -783,6 +866,31 @@ services:
   docker rmi $(docker images 'imagename' -q)
   ```
 
+* Remove the service in series, example remove Redis series of service
+  ```bash
+  docker stack rm redis
+  ```
+
+* List Network
+  ```bash
+  docker network ls
+  ```
+
+* Create a Network
+  ```bash
+  docker network create --driver overlay webnet
+  ```
+
+* List Docker info
+  ```bash
+  docker info
+  ```
+
+* Inspect Docker container with container id
+  ```bash
+  docker inspect a55625bc6906
+  ```
+  
 # Reference
 
 [Docker Swarm and DigitalOcean](https://docs.docker.com/machine/drivers/digital-ocean/)

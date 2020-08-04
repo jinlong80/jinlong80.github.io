@@ -47,3 +47,13 @@
   ```bash
   openssl x509 -req -in mqtt_client.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out client.crt -days 3650
   ```
+
+  * Remove Key password
+```bash
+openssl rsa -in cakey.pem -out cakeynp.pem
+```
+
+* Combine CA cert and Key
+```bash
+cat ca.pem cakeynp.pem > cakeyfull.pem
+```

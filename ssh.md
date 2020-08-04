@@ -2,6 +2,11 @@
 
 ## Command
 
+* To generate a new SSH key with 2048-bit RSA
+  ```bash
+  ssh-keygen -t rsa -b 2048 
+  ```
+
 * To list the SSH which is added
   ```bash
   ssh-add -l
@@ -37,3 +42,5 @@ chown -R $USER:$USER ~/.ssh
 [SSH Keys](https://docs.gitlab.com/ee/ci/ssh_keys/README.html)
 
 [Add SSH Keys to Existing Droplet](https://www.digitalocean.com/docs/droplets/how-to/add-ssh-keys/to-existing-droplet/)
+
+[Generate SSH Keys](https://gitlab.com/help/ssh/README#generating-a-new-ssh-key-pair)
